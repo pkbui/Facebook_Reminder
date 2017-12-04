@@ -1,0 +1,39 @@
+    
+ in onCreate() FacebookSdk.sdkInitialize(getApplicationContext());
+    private void initializeLogin(){
+        callbackManager = CallbackManager.Factory.create();
+        loginButton = findViewById(R.id.login_button);
+        statusDsplTxtView =  findViewById(R.id.textView);
+    }
+
+    private void setupCallBack(){
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                statusDsplTxtView.setText("Succeeded");
+            }
+
+            @Override
+            public void onCancel() {
+                statusDsplTxtView.setText("Cancelled");
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                statusDsplTxtView.setText("Error");
+            }
+        });
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+    
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp" />
