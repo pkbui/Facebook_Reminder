@@ -1,8 +1,12 @@
 # Facebook Reminder
+# Project Description
+Facebook provides a notification tool to as a reminder if there are any events or birthdays occurring soon. However, users often disgard them since the amount of notification is huge (Facebook also notifies if somebody likes, comments, shares on your posts). This application serves as a complementary tool for fitering out important activities.
 
-An android app that send facebook notifications for user.
+# How to use
+Users need to download and the app and link it with their facebook/messengers accounts.
+The app will montitor Facbook's notifications and send a reminder to your messenger to alert if there are any important notifications.
 
-Users can connect and link their facebook account to the app.
+# Frameworks
+Java 8
+Graph API v3.0
 
-The app will monitor the facebook notification and alert the user when 
-a new notification is received
